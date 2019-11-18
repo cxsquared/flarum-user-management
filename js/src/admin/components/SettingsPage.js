@@ -26,6 +26,7 @@ export default class SettingsPage extends Page {
                 </div>
                 {users.map((u, i) => (
                     <div className={`UserRow ${i % 2 === 0 ? "Even" : "Odd"}`}>
+                        <div className="Number">{i + 1}</div>
                         <div className="UserData">
                             <a href={`${app.forum.attribute('baseUrl')}/u/${u.data['username']}`} target="_blank">{u.data['username']}</a>
                         </div>

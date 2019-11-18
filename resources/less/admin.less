@@ -1,11 +1,24 @@
 .UserPage {
-    .UserRow,
+    display: grid;
+    grid-template-columns: 5px repeat(3, 1fr);
+    grid-gap: 10px;
+
     .Headers {
-        display: flex;
+        display: grid;
+        grid-column-start: 2;
+        grid-column-end: span 3;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 10px;
     }
 
-    .Even {
-        background: #a8a8a8
+    .UserRow {
+        .Headers();
+
+        grid-template-columns: inherit;
+
+        &.Even {
+            background: #a8a8a8;
+        }
     }
 
     .UserData,
