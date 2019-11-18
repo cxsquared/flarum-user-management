@@ -1,13 +1,15 @@
 .UserPage {
+    @columns: 6;
+
     display: grid;
-    grid-template-columns: 5px repeat(3, 1fr);
+    grid-template-columns: 5px repeat(@columns, 1fr);
     grid-gap: 10px;
 
     .Headers {
         display: grid;
         grid-column-start: 2;
-        grid-column-end: span 3;
-        grid-template-columns: repeat(3, 1fr);
+        grid-column-end: span @columns - 1;
+        grid-template-columns: repeat(@columns, 1fr);
         grid-column-gap: 10px;
     }
 
@@ -21,7 +23,7 @@
         }
 
         .Number {
-            align-self: center;
+            padding-top: 5px;
         }
     }
 

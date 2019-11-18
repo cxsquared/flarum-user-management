@@ -34,10 +34,19 @@ export default class SettingsPage extends Page {
                     Username
                 </legend>
                 <legend>
-                    Discussions
+                    Display Name 
                 </legend>
                 <legend>
-                    Comments
+                    # of Discussion
+                </legend>
+                <legend>
+                    # of Comments
+                </legend>
+                <legend>
+                    Joined 
+                </legend>
+                <legend>
+                    Last Seen 
                 </legend>
             </div>,
             this.users.map((u, i) => (
@@ -47,10 +56,19 @@ export default class SettingsPage extends Page {
                         <a href={`${app.forum.attribute('baseUrl')}/u/${u.username()}`} target="_blank">{u.username()}</a>
                     </div>
                     <div className="UserData">
+                        {u.displayName()}
+                    </div>
+                    <div className="UserData">
                         {u.discussionCount()}
                     </div>
                     <div className="UserData">
                         {u.commentCount()}
+                    </div>
+                    <div className="UserData">
+                        {u.joinTime()}
+                    </div>
+                    <div className="UserData">
+                        {u.lastSeenAt()}
                     </div>
                 </div>
             ))
